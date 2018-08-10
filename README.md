@@ -1,2 +1,0 @@
-# JavascriptHelpers
-Created with CodeSandbox
