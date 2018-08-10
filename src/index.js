@@ -1,19 +1,20 @@
-import { filter } from "./arrayHelper";
-function getCity(userCity) {
-  const cities = ["London", "Paris", "New York"];
+//import { filter } from "./arrayHelper";
 
-  const result = cities.forEach(city => {
-    if (city.toLowerCase() === userCity.toLowerCase()) {
-      // do something at databse
-      console.log("Found");
-      return;
-    }
-    // Close match
-    if (city.toLowerCase().match(userCity.toLowerCase())) {
-      console.log(`Did you mean ${city}?`);
-    }
+export const getLengthOfArray = array => {
+  return array.length;
+};
+
+//Creates a new array based on whether the items of an array pass a certain condition.
+export const filter = (array, searchTerm) => {
+  return array.filter(arrayElement => {
+    return arrayElement === searchTerm;
   });
-}
+};
 
-getCity("londo");
-filter();
+// ************** TEST CODE **************//
+// 1. Array length
+const citiesArray = ["London", "Paris", "New York", "London"];
+console.log(`Length of an array is ${getLengthOfArray(citiesArray)}`);
+
+// 2. Filter - return a new array which matches the search term
+console.log(`New array contains ${filter(citiesArray, "London")}`);
